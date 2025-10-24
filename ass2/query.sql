@@ -25,8 +25,12 @@ GROUP BY c.customerId, c.first_name, c.last_name, ci.date_of_birth, ci.email, ci
 HAVING total_balance > 0
 ORDER BY total_balance DESC;
 
-create index idx_accounts_filter_group on accounts (status, open_date, customerId, balance);
+SHOW INDEX FROM accounts;
+create index idx_acc_bal on accounts (customerId, balance);
+create index idx_clients_info ON clients_info (customerId);
 
+
+--explain analyze
 with stats as(
     SELECT
         customerId,
