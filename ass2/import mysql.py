@@ -144,7 +144,7 @@ if __name__ == "__main__":
         # require significant disk space.
         #
         # Starting with 10,000 clients (in batches of 1000) for testing.
-        insert_bulk_data(conn, n=300000, batch_size=5000)
+        insert_bulk_data(conn, n=3000000, batch_size=5000)
         
         # Uncomment the line below for your full 5M load:
         # insert_bulk_data(conn, n=5000000, batch_size=5000)
