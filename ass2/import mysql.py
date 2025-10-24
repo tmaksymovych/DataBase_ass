@@ -64,7 +64,7 @@ def generate_random_account(customer_id, account_id):
     
     return (account_id, customer_id, balance, status, open_date)
 
-def insert_bulk_data(connection, n=3000000, batch_size=5000):
+def insert_bulk_data(connection, n=300000, batch_size=5000):
     """
     Inserts 'n' clients and their related data in batches.
     Each client will get 1 info record and 1-3 account records.
@@ -144,7 +144,7 @@ if __name__ == "__main__":
         # require significant disk space.
         #
         # Starting with 10,000 clients (in batches of 1000) for testing.
-        insert_bulk_data(conn, n=3000000, batch_size=5000)
+        insert_bulk_data(conn, n=300000, batch_size=5000)
         
         # Uncomment the line below for your full 5M load:
         # insert_bulk_data(conn, n=5000000, batch_size=5000)
